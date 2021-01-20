@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".detail.DetailMovieActivity">
+
+    <ImageView
+        android:id="@+id/imgDetail"
+        android:layout_width="0dp"
+        android:layout_height="250dp"
+        android:layout_marginTop="8dp"
+        android:transitionName="img_poster"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="ContentDescription"
+        tools:srcCompat="@tools:sample/avatars" />
+
+    <TextView
+        android:id="@+id/tvDetailContentTittle"
+        style="@style/TextTitle"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imgDetail"
+        tools:text="Content Tittle" />
+
+    <TextView
+        android:id="@+id/tvDetailDescription"
+        style="@style/TextTitle"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:text="@string/description"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvRating" />
+
+    <TextView
+        android:id="@+id/tvDetailContentDescription"
+        style="@style/TextContent"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="16dp"
+        android:lineSpacingMultiplier="1.5"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvDetailDescription"
+        tools:text="Content Description" />
+
+    <TextView
+        android:id="@+id/tvRating"
+        style="@style/TextContent"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:gravity="center_vertical"
+        app:drawableStartCompat="@drawable/ic_star"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/tvRatingTitle"
+        app:layout_constraintTop_toBottomOf="@+id/tvRelease"
+        tools:text="85" />
+
+    <TextView
+        android:id="@+id/tvRatingTitle"
+        style="@style/TextTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:text="@string/rating"
+        app:layout_constraintBottom_toBottomOf="@+id/tvRating"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvRelease" />
+
+    <TextView
+        android:id="@+id/tvRelease"
+        style="@style/TextTitle"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvDetailContentTittle"
+        tools:text="Realese : 2019" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/favorite"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="@dimen/fab_margin"
+        app:layout_anchorGravity="bottom|end"
+        app:layout_constraintBottom_toBottomOf="@+id/imgDetail"
+        app:layout_constraintEnd_toEndOf="@+id/imgDetail"
+        app:layout_constraintTop_toBottomOf="@+id/imgDetail"
+        app:srcCompat="@android:drawable/ic_dialog_email" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

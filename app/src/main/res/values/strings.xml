@@ -1,0 +1,19 @@
+<resources>
+    <string name="app_name">MovieApps</string>
+    <string name="image_description">Image</string>
+    <string name="no_data">Empty data</string>
+    <string name="something_wrong">Oops.. something went wrong</string>
+    <string name="title_activity_home">MainActivity</string>
+    <string name="title_home">Home</string>
+    <string name="title_dashboard">Dashboard</string>
+    <string name="title_notifications">Notifications</string>
+    <string name="title_favorite">favorite</string>
+    <string name="exit_message">Double click to exit</string>
+    <string name="rating">Rating :</string>
+    <string name="description">Description :</string>
+    <string name="tvshows">TVSHOWS</string>
+    <string name="movie">MOVIE</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="my_movie_apps">My Movie Apps</string>
+</resources>
