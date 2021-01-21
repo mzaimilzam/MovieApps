@@ -1,6 +1,5 @@
 package id.co.zaimilzam.movieapps.main.tv
 
-import androidx.hilt.lifecycle.ViewModelInject
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.asLiveData
 import id.co.zaimilzam.core.domain.usecase.MovieUseCase
@@ -9,7 +8,7 @@ import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.flatMapLatest
 
 @ExperimentalCoroutinesApi
-class TvShowViewModel @ViewModelInject constructor(private val movieUseCase: MovieUseCase) : ViewModel() {
+class TvShowViewModel(movieUseCase: MovieUseCase) : ViewModel() {
 
     val searchQuery = MutableStateFlow("")
 

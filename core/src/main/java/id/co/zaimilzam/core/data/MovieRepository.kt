@@ -13,20 +13,18 @@ import id.co.zaimilzam.core.utils.DataMapperMovie
 import id.co.zaimilzam.core.utils.DataMapperTvShow
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.map
-import javax.inject.Inject
-import javax.inject.Singleton
 
 /**
  * Created by Muhammad Zaim Milzam on 10/01/21.
  * linkedin : Muhammad Zaim Milzam
  */
 
-@Singleton
-class MovieRepository @Inject constructor(
+class MovieRepository constructor(
     private val remoteDataSource: RemoteDataSource,
     private val localDataSource: LocalDataSource,
     private val appExecutors: AppExecutors
 ) : IMovieRepository {
+
     override fun getAllMovie(): Flow<Resource<List<Movie>>> =
         object : NetworkBoundResource<List<Movie>, List<MovieResponse>>() {
             override fun loadFromDB(): Flow<List<Movie>> {

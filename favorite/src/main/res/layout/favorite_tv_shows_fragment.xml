@@ -6,21 +6,6 @@
     android:layout_height="match_parent"
     tools:context=".tvshows.FavoriteTvShowsFragment">
 
-
-    <ProgressBar
-        android:id="@+id/pgBarDetail3"
-        style="?android:attr/progressBarStyleHorizontal"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:indeterminate="true"
-        android:progressTint="@color/purple_500"
-        android:secondaryProgressTint="@color/purple_200"
-        android:visibility="gone"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rvFavoriteTv"
         android:layout_width="match_parent"
@@ -28,6 +13,16 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/pgBarDetail3" />
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <include
+        android:id="@+id/emptyFavTv"
+        layout="@layout/view_empty"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
 

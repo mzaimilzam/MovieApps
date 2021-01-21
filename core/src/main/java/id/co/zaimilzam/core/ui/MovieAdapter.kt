@@ -21,6 +21,7 @@ class MovieAdapter : RecyclerView.Adapter<MovieAdapter.MovieViewHolder>() {
         listData.addAll(newListData)
         notifyDataSetChanged()
     }
+
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MovieViewHolder {
         val view =
             LayoutInflater.from(parent.context).inflate(R.layout.item_list_movie, parent, false)
@@ -37,25 +38,21 @@ class MovieAdapter : RecyclerView.Adapter<MovieAdapter.MovieViewHolder>() {
     inner class MovieViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         private val binding = ItemListMovieBinding.bind(itemView)
         fun bind(movie: Movie) {
-            with(binding) {
+            // set circular progress loading
+            val circularProgressDrawable = CircularProgressDrawable(itemView.context)
+            circularProgressDrawable.strokeWidth = 5f
+            circularProgressDrawable.centerRadius = 30f
+            circularProgressDrawable.start()
 
-                // set circular progress loading
-                val circularProgressDrawable = CircularProgressDrawable(itemView.context)
-                circularProgressDrawable.strokeWidth = 5f
-                circularProgressDrawable.centerRadius = 30f
-                circularProgressDrawable.start()
+            val image = "https://image.tmdb.org/t/p/original${movie.image}"
 
-                val image = "https://image.tmdb.org/t/p/original${movie.image}"
+            Glide.with(itemView.context)
+                .load(image)
+                .placeholder(circularProgressDrawable)
+                .into(binding.imgPoster)
 
-                Glide.with(itemView.context)
-                    .load(image)
-                    .placeholder(circularProgressDrawable)
-                    .into(imgPoster)
-
-                tvTittleMovie.text = movie.tittle
-                tvGenreMovie.text = movie.description
-
-            }
+            binding.tvTittleMovie.text = movie.tittle
+            binding.tvGenreMovie.text = movie.description
         }
 
         init {

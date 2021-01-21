@@ -9,18 +9,16 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.flow
 import kotlinx.coroutines.flow.flowOn
-import javax.inject.Inject
-import javax.inject.Singleton
 
 /**
  * Created by Muhammad Zaim Milzam on 10/01/21.
  * linkedin : Muhammad Zaim Milzam
  */
 
-@Singleton
-class RemoteDataSource @Inject constructor(private val apiService: ApiService) {
+class RemoteDataSource  constructor(private val apiService: ApiService) {
 
     suspend fun getAllMovie(): Flow<ApiResponse<List<MovieResponse>>> {
+
         //get data from remote api
         return flow {
             try {
