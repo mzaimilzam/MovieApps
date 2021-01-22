@@ -2,9 +2,6 @@
 version: 2.1
 # Use a package of configuration called an orb.
 orbs:
- version: 2.1
- 
-orbs:
   android: circleci/android@0.2.1
  
 jobs:
